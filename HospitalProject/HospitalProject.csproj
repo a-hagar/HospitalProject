@@ -186,7 +186,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107231954090_newtables.cs" />
+    <Compile Include="Migrations\202107231954090_newtables.Designer.cs">
+      <DependentUpon>202107231954090_newtables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107232002105_tables.cs" />
+    <Compile Include="Migrations\202107232002105_tables.Designer.cs">
+      <DependentUpon>202107232002105_tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107232004053_moretables.cs" />
+    <Compile Include="Migrations\202107232004053_moretables.Designer.cs">
+      <DependentUpon>202107232004053_moretables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Files.cs" />
+    <Compile Include="Models\Job.cs" />
+    <Compile Include="Models\Submissions.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -264,6 +282,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107231954090_newtables.resx">
+      <DependentUpon>202107231954090_newtables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107232002105_tables.resx">
+      <DependentUpon>202107232002105_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107232004053_moretables.resx">
+      <DependentUpon>202107232004053_moretables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
