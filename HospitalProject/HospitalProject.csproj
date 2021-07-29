@@ -202,6 +202,10 @@
     <Compile Include="Migrations\202107280520280_EricAdds.Designer.cs">
       <DependentUpon>202107280520280_EricAdds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107291940113_Smitalfeedback.cs" />
+    <Compile Include="Migrations\202107291940113_Smitalfeedback.Designer.cs">
+      <DependentUpon>202107291940113_Smitalfeedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107280520280_EricAdds.resx">
       <DependentUpon>202107280520280_EricAdds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107291940113_Smitalfeedback.resx">
+      <DependentUpon>202107291940113_Smitalfeedback.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
