@@ -198,6 +198,14 @@
     <Compile Include="Migrations\202107232004053_moretables.Designer.cs">
       <DependentUpon>202107232004053_moretables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107280520280_EricAdds.cs" />
+    <Compile Include="Migrations\202107280520280_EricAdds.Designer.cs">
+      <DependentUpon>202107280520280_EricAdds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107291940113_Smitalfeedback.cs" />
+    <Compile Include="Migrations\202107291940113_Smitalfeedback.Designer.cs">
+      <DependentUpon>202107291940113_Smitalfeedback.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202108011542416_update-table.cs" />
     <Compile Include="Migrations\202108011542416_update-table.Designer.cs">
       <DependentUpon>202108011542416_update-table.cs</DependentUpon>
@@ -229,7 +237,13 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Donation.cs" />
+    <Compile Include="Models\Donor.cs" />
+    <Compile Include="Models\Feedback.cs" />
+    <Compile Include="Models\Files.cs" />
     <Compile Include="Models\Job.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientLog.cs" />
     <Compile Include="Models\Submissions.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -324,6 +338,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107232004053_moretables.resx">
       <DependentUpon>202107232004053_moretables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107280520280_EricAdds.resx">
+      <DependentUpon>202107280520280_EricAdds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107291940113_Smitalfeedback.resx">
+      <DependentUpon>202107291940113_Smitalfeedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108011542416_update-table.resx">
       <DependentUpon>202108011542416_update-table.cs</DependentUpon>
