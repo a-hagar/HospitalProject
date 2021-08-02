@@ -6,14 +6,14 @@ namespace HospitalProject.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class newtables : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class changedtables3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(newtables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changedtables3));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107231954090_newtables"; }
+            get { return "202108020055411_changedtables3"; }
         }
         
         string IMigrationMetadata.Source

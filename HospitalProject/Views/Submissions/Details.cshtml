@@ -1,0 +1,31 @@
+﻿@model HospitalProject.Models.SubmissionsDto
+@{
+    ViewBag.Title = "List";
+}
+
+    <a href="/Submissions/List">Return to Submissions</a>
+    <a href="/Submissions/DeleteConfirm">Delete Application</a>
+    <a href="/Submissions/Edit/@Model.SubmissionId">Delete Application</a>
+
+
+    <h2>Applicant: @Model.FirstName @Model.LastName</h2>
+    <p>Applied to: @Model.JobId</p>
+    <p>Application Date: @Model.SubmissionDate</p>
+
+    <h3>Personal Information</h3>
+    <p>Address: @Model.Address, @Model.City</p>
+    <p>Phone Number: @Model.PhoneNumber</p>
+    <p>Email: @Model.Email</p>
+
+    <h3>Resume</h3>
+    @{
+        if (Model.hasFile)
+        {
+            string resume = "/Content/Resume/" + Model.SubmissionId + "." + Model.FileExtension;
+            <a href="@resume">@Model.FirstName's Resume</a>
+        }
+
+    }
+
+
+}

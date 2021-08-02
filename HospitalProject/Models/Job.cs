@@ -13,12 +13,24 @@ namespace HospitalProject.Models
         public int JobId { get; set; }
         public string JobTitle { get; set; }
         public string JobDepartment { get; set; }
-        public string JobDescription{ get; set; }
+        public string JobDescription { get; set; }
         public DateTime JobPublishDate { get; set; }
         public DateTime JobDeadline { get; set; }
         public string JobType { get; set; }
         public string JobLocation { get; set; }
 
-
     }
+
+    public class JobDto
+    {
+        public int JobId { get; set; }
+        public string JobTitle { get; set; }
+        public string JobDepartment { get; set; }
+        public string JobDescription { get; set; }
+        public DateTime JobPublishDate { get; set; }
+        public DateTime JobDeadline { get; set; }
+        public string JobType { get; set; }
+        public string JobLocation { get; set; }
+    }
+
 }

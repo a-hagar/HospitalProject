@@ -1,0 +1,32 @@
+﻿@model IEnumerable<HospitalProject.Models.SubmissionsDto>
+@{
+    ViewBag.Title = "New";
+}
+
+
+<a href="/Submissions/List">Go back</a>
+
+<h2>Create Application</h2>
+<form action="/Submissions/Create" method="POST">
+    <div>
+        <input type="file" name="Resume" />
+    </div>
+    <div>
+        <label>First Name </label><input type="text" name="FirstName" />
+    </div>
+    <div>
+        <label>Last Name </label><input type="text" name="LastName" />
+    </div>
+    <div>
+        <label>Address </label><input type="text" name="Address" />
+    </div>
+    <div>
+        <label>Email </label><input type="email" name="Email" />
+    </div>
+    <div>
+        <label>Phone Number </label><input type="tel" name="PhoneNum" />
+    </div>
+    <div>
+        <input type="submit" name="Submit Application" />
+    </div>
+</form>

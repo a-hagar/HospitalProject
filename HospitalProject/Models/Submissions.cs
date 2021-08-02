@@ -11,20 +11,37 @@ namespace HospitalProject.Models
     {
         [Key]
         public int SubmissionId { get; set; }
-
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool hasFile { get; set; }
+        public string FileExtension { get; set; }
+        public DateTime SubmissionDate { get; set; }
 
         [ForeignKey("Job")]
         public int JobId { get; set; }
         public virtual Job Job { get; set; }
 
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        public virtual User User { get; set; }
+    }
+
+    public class SubmissionsDto
+    {
+        public int SubmissionId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public bool hasFile { get; set; }
+        public string FileExtension { get; set; }
         public DateTime SubmissionDate { get; set; }
-
-        [ForeignKey("Files")]
-        public int FileId { get; set; }
-        public virtual Files Files { get; set; }
-
+        public int JobId { get; set; }
     }
 }

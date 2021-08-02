@@ -25,9 +25,8 @@ namespace HospitalProject.Models
         {
         }
 
-        public DbSet<Job> Job { get; set; }
+        public DbSet<Job> Jobs { get; set; }
         public DbSet<User> User { get; set; }
-        public DbSet<Files> Files { get; set; }
         public DbSet<Submissions> Submissions { get; set; }
 
         public static ApplicationDbContext Create()
