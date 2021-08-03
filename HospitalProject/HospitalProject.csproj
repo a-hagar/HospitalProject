@@ -240,7 +240,6 @@
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\Feedback.cs" />
-    <Compile Include="Models\Files.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\PatientLog.cs" />
