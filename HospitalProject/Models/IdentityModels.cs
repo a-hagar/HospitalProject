@@ -1,4 +1,7 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,6 +19,14 @@ namespace HospitalProject.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Gender { get; set; }
+        public DateTime DateofBirth { get; set; }
+
+        public BloodGroupList BloodGroup { get; set; }
+        public string Address { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -33,5 +44,25 @@ namespace HospitalProject.Models
         {
             return new ApplicationDbContext();
         }
+    }
+
+    public enum BloodGroupList
+    {
+        [Display(Name = "A+")]
+        APositive,
+        [Display(Name = "A-")]
+        ANegative,
+        [Display(Name = "B+")]
+        BPositive,
+        [Display(Name = "B-")]
+        BNegative,
+        [Display(Name = "O+")]
+        OPositive,
+        [Display(Name = "O-")]
+        ONegative,
+        [Display(Name = "AB+")]
+        ABPositive,
+        [Display(Name = "AB-")]
+        ABNegative
     }
 }

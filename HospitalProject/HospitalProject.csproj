@@ -230,9 +230,17 @@
     <Compile Include="Migrations\202108020058321_undo.Designer.cs">
       <DependentUpon>202108020058321_undo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108020200555_newuser.cs" />
-    <Compile Include="Migrations\202108020200555_newuser.Designer.cs">
-      <DependentUpon>202108020200555_newuser.cs</DependentUpon>
+    <Compile Include="Migrations\202108050901410_NavaneethMigrationSolution.cs" />
+    <Compile Include="Migrations\202108050901410_NavaneethMigrationSolution.Designer.cs">
+      <DependentUpon>202108050901410_NavaneethMigrationSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108050925211_NavaneethASPUsersAddition.cs" />
+    <Compile Include="Migrations\202108050925211_NavaneethASPUsersAddition.Designer.cs">
+      <DependentUpon>202108050925211_NavaneethASPUsersAddition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.cs" />
+    <Compile Include="Migrations\202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.Designer.cs">
+      <DependentUpon>202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -362,8 +370,14 @@
     <EmbeddedResource Include="Migrations\202108020058321_undo.resx">
       <DependentUpon>202108020058321_undo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108020200555_newuser.resx">
-      <DependentUpon>202108020200555_newuser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108050901410_NavaneethMigrationSolution.resx">
+      <DependentUpon>202108050901410_NavaneethMigrationSolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108050925211_NavaneethASPUsersAddition.resx">
+      <DependentUpon>202108050925211_NavaneethASPUsersAddition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.resx">
+      <DependentUpon>202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
