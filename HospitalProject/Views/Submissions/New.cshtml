@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HospitalProject.Models.SubmissionsDto>
+﻿@model HospitalProject.Models.SubmissionsDto
 @{
     ViewBag.Title = "New";
 }
@@ -7,9 +7,15 @@
 <a href="/Submissions/List">Go back</a>
 
 <h2>Create Application</h2>
+
+
+
 <form action="/Submissions/Create" method="POST">
     <div>
         <input type="file" name="Resume" />
+    </div>
+    <div style="display:none">
+        <label>Job Id </label><input type="text" name="JobId" value="@Model.JobId" readonly />
     </div>
     <div>
         <label>First Name </label><input type="text" name="FirstName" />
@@ -23,6 +29,9 @@
     <div>
         <label>Email </label><input type="email" name="Email" />
     </div>
+    <div style="display:none">
+        <label>Publish Date </label><input type="date" id="date" name="SubmissionDate" />
+    </div>
     <div>
         <label>Phone Number </label><input type="tel" name="PhoneNum" />
     </div>
@@ -30,3 +39,7 @@
         <input type="submit" name="Submit Application" />
     </div>
 </form>
+<script>
+    let today = new Date().toISOString().substr(0, 10);
+    document.querySelector("#date").value = today;
+</script>

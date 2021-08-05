@@ -242,6 +242,10 @@
     <Compile Include="Migrations\202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.Designer.cs">
       <DependentUpon>202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108052120215_ahmed-fixes.cs" />
+    <Compile Include="Migrations\202108052120215_ahmed-fixes.Designer.cs">
+      <DependentUpon>202108052120215_ahmed-fixes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -378,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.resx">
       <DependentUpon>202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108052120215_ahmed-fixes.resx">
+      <DependentUpon>202108052120215_ahmed-fixes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

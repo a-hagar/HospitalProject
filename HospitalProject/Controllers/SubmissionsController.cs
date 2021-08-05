@@ -15,6 +15,9 @@ namespace HospitalProject.Controllers
         private static readonly HttpClient client;
         JavaScriptSerializer jss = new JavaScriptSerializer();
 
+
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         static SubmissionsController()
         {
             HttpClientHandler handler = new HttpClientHandler()
@@ -48,7 +51,7 @@ namespace HospitalProject.Controllers
         // GET: Submissions/Details/5
         public ActionResult Details(int id)
         {
-            string url = "submissionsdata/findsubmissions/" + id;
+            string url = "submissionsdata/findsubmission/" + id;
 
             HttpResponseMessage response = client.GetAsync(url).Result;
 
@@ -64,9 +67,17 @@ namespace HospitalProject.Controllers
         }
 
         // GET: Submissions/Create
-        public ActionResult New()
+        public ActionResult New(int? JobId)
         {
-            return View();
+            if (JobId == null)
+            {
+                return RedirectToAction("List", "Job");
+            }
+
+            //var job = db.Jobs.Find(JobId);
+            SubmissionsDto newSubmission = new SubmissionsDto { JobId = Convert.ToInt32(JobId) };
+
+            return View(newSubmission);
         }
 
         // POST: Submissions/Create
@@ -134,7 +145,7 @@ namespace HospitalProject.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            string url = "submissionsdata/deletesubmissions/" +id;
+            string url = "submissionsdata/deletesubmissions/" + id;
 
             HttpContent content = new StringContent("");
             content.Headers.ContentType.MediaType = "application/json";
@@ -153,3 +164,4 @@ namespace HospitalProject.Controllers
         }
     }
 }
+
