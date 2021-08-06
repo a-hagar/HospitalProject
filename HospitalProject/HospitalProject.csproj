@@ -187,6 +187,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SubmissionsController.cs" />
     <Compile Include="Controllers\SubmissionsDataController.cs" />
+    <Compile Include="Controllers\VolunteersController.cs" />
+    <Compile Include="Controllers\VolunteersDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -242,9 +244,26 @@
     <Compile Include="Migrations\202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.Designer.cs">
       <DependentUpon>202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108051544586_Departments.cs" />
+    <Compile Include="Migrations\202108051544586_Departments.Designer.cs">
+      <DependentUpon>202108051544586_Departments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108051602096_Volunteer.cs" />
+    <Compile Include="Migrations\202108051602096_Volunteer.Designer.cs">
+      <DependentUpon>202108051602096_Volunteer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108051603484_VolunteerDept.cs" />
+    <Compile Include="Migrations\202108051603484_VolunteerDept.Designer.cs">
+      <DependentUpon>202108051603484_VolunteerDept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108051628133_NavaneethVolunteerUpdated.cs" />
+    <Compile Include="Migrations\202108051628133_NavaneethVolunteerUpdated.Designer.cs">
+      <DependentUpon>202108051628133_NavaneethVolunteerUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\Feedback.cs" />
@@ -255,6 +274,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ViewModels\VolunteerDept.cs" />
+    <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -322,6 +343,7 @@
     <Content Include="Views\Submissions\Details.cshtml" />
     <Content Include="Views\Job\New.cshtml" />
     <Content Include="Views\Submissions\New.cshtml" />
+    <Content Include="Views\Volunteers\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +400,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.resx">
       <DependentUpon>202108050954221_NavaneethASPUserDetailedFLNameGenderBGAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108051544586_Departments.resx">
+      <DependentUpon>202108051544586_Departments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108051602096_Volunteer.resx">
+      <DependentUpon>202108051602096_Volunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108051603484_VolunteerDept.resx">
+      <DependentUpon>202108051603484_VolunteerDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108051628133_NavaneethVolunteerUpdated.resx">
+      <DependentUpon>202108051628133_NavaneethVolunteerUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
