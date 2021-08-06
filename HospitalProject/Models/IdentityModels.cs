@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using HospitalProject.Models.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -39,6 +40,14 @@ namespace HospitalProject.Models
         public DbSet<Job> Jobs { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Submissions> Submissions { get; set; }
+
+        // adding Department to DB
+        public DbSet<Department> Departments { get; set; }
+        // adding Volunteers to DB
+        public DbSet<Volunteer> Volunteers { get; set; }
+        // adding junction table to take care of Volunteer and Dept Mapping
+        public DbSet<VolunteerDept> VolunteerDepts { get; set; }
+
 
         public static ApplicationDbContext Create()
         {
