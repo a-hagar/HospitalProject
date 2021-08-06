@@ -187,6 +187,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SubmissionsController.cs" />
     <Compile Include="Controllers\SubmissionsDataController.cs" />
+    <Compile Include="Controllers\VolunteersController.cs" />
+    <Compile Include="Controllers\VolunteersDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -333,6 +335,7 @@
     <Content Include="Views\Submissions\Details.cshtml" />
     <Content Include="Views\Job\New.cshtml" />
     <Content Include="Views\Submissions\New.cshtml" />
+    <Content Include="Views\Volunteers\Join.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
