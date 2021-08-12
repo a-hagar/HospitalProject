@@ -1,0 +1,24 @@
+﻿@model IEnumerable<HospitalProject.Models.DonationDto>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+
+</head>
+<body>
+    <div>
+        @foreach (var donation in Model)
+        {
+            <h2><a href="/Donation/Details/@donation.DonationId">Donation # @donation.DonationId - Donated @donation.DonationDate</a></h2>
+        }
+
+    </div>
+</body>
+</html>

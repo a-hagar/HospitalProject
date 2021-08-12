@@ -1,0 +1,29 @@
+﻿@model HospitalProject.Models.ViewModels.UpdateDonor
+@{
+    ViewBag.Title = "Edit";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        <form action="/Donor/Update/@Model.SelectedDonor.DonorId" method="POST">
+            <div style="display:none;">
+                @* Pass through the donor ID *@
+                <input type="text" name="DonorID" value="@Model.SelectedDonor.DonorId" />
+            </div>
+            <div>
+                <input type="submit" value="Update Donor" />
+
+            </div>
+        </form>
+
+
+    </div>
+</body>
+</html>

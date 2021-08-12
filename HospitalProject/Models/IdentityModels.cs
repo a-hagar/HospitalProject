@@ -40,6 +40,11 @@ namespace HospitalProject.Models
         public DbSet<User> User { get; set; }
         public DbSet<Submissions> Submissions { get; set; }
 
+
+        // Donor and Donations
+        public DbSet<Donor> Donors { get; set; }
+        public DbSet<Donation> Donations { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

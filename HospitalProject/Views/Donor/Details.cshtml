@@ -1,0 +1,25 @@
+﻿@model HospitalProject.Models.ViewModels.DetailsDonors
+
+@{
+    ViewBag.Title = "View";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <a href="/Donor/List">Go back to list</a>
+        <br />
+        <a href="/Donor/Edit/@Model.SelectedDonor.DonorId">Update</a>
+        <br />
+        <a style="color:#ab2020;" href="/Donor/DeleteConfirm/@Model.SelectedDonor.DonorId">Delete</a>
+        <h2>Placeholder until I join the Donor and User Tables - Donor ID: @Model.SelectedDonor.DonorId</h2>
+
+    </div>
+</body>
+</html>

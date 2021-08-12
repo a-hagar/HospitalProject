@@ -12,10 +12,18 @@ namespace HospitalProject.Models
         [Key]
         public int DonorId { get; set; }
 
-        [ForeignKey("User")]
-        public int userid { get; set; }
-        public virtual User User { get; set; }
+        [ForeignKey("ApplicationUser")] //navaneeth put actual variable/column in here rather than the table
+        public string UserId { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
+
+    }
+
+    public class DonorDto
+    {
+        public int DonorId { get; set; }
+        [ForeignKey("User")]
+        public string UserId { get; set; }
 
     }
 }
