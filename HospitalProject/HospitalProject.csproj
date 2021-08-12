@@ -252,6 +252,14 @@
     <Compile Include="Migrations\202108060507064_NavaneethVolunteerDept.Designer.cs">
       <DependentUpon>202108060507064_NavaneethVolunteerDept.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108121911369_changedtables4.cs" />
+    <Compile Include="Migrations\202108121911369_changedtables4.Designer.cs">
+      <DependentUpon>202108121911369_changedtables4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108121931549_newsubmission.cs" />
+    <Compile Include="Migrations\202108121931549_newsubmission.Designer.cs">
+      <DependentUpon>202108121931549_newsubmission.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -262,7 +270,7 @@
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\PatientLog.cs" />
-    <Compile Include="Models\Submissions.cs" />
+    <Compile Include="Models\Submission.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -398,6 +406,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108060507064_NavaneethVolunteerDept.resx">
       <DependentUpon>202108060507064_NavaneethVolunteerDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121911369_changedtables4.resx">
+      <DependentUpon>202108121911369_changedtables4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108121931549_newsubmission.resx">
+      <DependentUpon>202108121931549_newsubmission.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

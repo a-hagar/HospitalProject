@@ -22,13 +22,13 @@ namespace HospitalProject.Controllers
         // GET: api/SubmissionsData
 
         [HttpGet]
-        [ResponseType(typeof(SubmissionsDto))]
+        [ResponseType(typeof(SubmissionDto))]
         public IHttpActionResult ListSubmissions()
         {
-            List<Submissions> Submissions = db.Submissions.ToList();
-            List<SubmissionsDto> SubmissionsDtos = new List<SubmissionsDto>();
+            List<Submission> Submissions = db.Submissions.ToList();
+            List<SubmissionDto> SubmissionDtos = new List<SubmissionDto>();
 
-            Submissions.ForEach(s => SubmissionsDtos.Add(new SubmissionsDto()
+            Submissions.ForEach(s => SubmissionDtos.Add(new SubmissionDto()
             {
 
                 SubmissionId = s.SubmissionId,
@@ -41,18 +41,18 @@ namespace HospitalProject.Controllers
                 JobId = s.JobId,
             }));
 
-            return Ok(SubmissionsDtos);
+            return Ok(SubmissionDtos);
 
         }
 
         // GET: api/SubmissionsData/5
 
         [HttpGet]
-        [ResponseType(typeof(SubmissionsDto))]
+        [ResponseType(typeof(SubmissionDto))]
         public IHttpActionResult FindSubmission(int id)
         {
-            Submissions submissions = db.Submissions.Find(id);
-            SubmissionsDto SubmissionsDto = new SubmissionsDto()
+            Submission submissions = db.Submissions.Find(id);
+            SubmissionDto SubmissionDto = new SubmissionDto()
             {
                 SubmissionId = submissions.SubmissionId,
                 FirstName = submissions.FirstName,
@@ -69,7 +69,7 @@ namespace HospitalProject.Controllers
                 return NotFound();
             }
 
-            return Ok(SubmissionsDto);
+            return Ok(SubmissionDto);
         }
 
 
@@ -111,7 +111,7 @@ namespace HospitalProject.Controllers
                                 FileExtension = extension;
 
 
-                                Submissions selectedsubmission = db.Submissions.Find(id);
+                                Submission selectedsubmission = db.Submissions.Find(id);
                                 selectedsubmission.hasFile = hasFile;
                                 selectedsubmission.FileExtension = FileExtension;
                                 db.Entry(selectedsubmission).State = EntityState.Modified;
@@ -142,7 +142,7 @@ namespace HospitalProject.Controllers
 
         // PUT: api/SubmissionsData/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult UpdateSubmissions(int id, Submissions submissions)
+        public IHttpActionResult UpdateSubmissions(int id, Submission submissions)
         {
             Debug.WriteLine("Updating Submission...");
             if (!ModelState.IsValid)
@@ -180,8 +180,8 @@ namespace HospitalProject.Controllers
 
         // POST: api/SubmissionsData
         [HttpPost]
-        [ResponseType(typeof(Submissions))]
-        public IHttpActionResult AddSubmissions(Submissions submissions)
+        [ResponseType(typeof(Submission))]
+        public IHttpActionResult AddSubmissions(Submission submissions)
         {
             if (!ModelState.IsValid)
             {
@@ -196,10 +196,10 @@ namespace HospitalProject.Controllers
 
         // DELETE: api/SubmissionsData/5
         [HttpPost]
-        [ResponseType(typeof(Submissions))]
+        [ResponseType(typeof(Submission))]
         public IHttpActionResult DeleteSubmissions(int id)
         {
-            Submissions submissions = db.Submissions.Find(id);
+            Submission submissions = db.Submissions.Find(id);
             if (submissions == null)
             {
                 return NotFound();

@@ -10,7 +10,7 @@ using HospitalProject.Models;
 
 namespace HospitalProject.Controllers
 {
-    public class SubmissionsController : Controller
+    public class SubmissionController : Controller
     {
         private static readonly HttpClient client;
         JavaScriptSerializer jss = new JavaScriptSerializer();
@@ -18,7 +18,7 @@ namespace HospitalProject.Controllers
 
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        static SubmissionsController()
+        static SubmissionController()
         {
             HttpClientHandler handler = new HttpClientHandler()
             {
@@ -34,14 +34,14 @@ namespace HospitalProject.Controllers
         public ActionResult List()
         {
             //retrieve list of submissions from submissions api
-            //curl https://localhost:44329/api/memberdata/listmembers
+            //curl https://localhost:44329/api/submissiondata/listsubmissions
 
-            string url = "submissionsdata/listsubmissions/";
+            string url = "submissiondata/listsubmissions/";
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             Debug.WriteLine("The response code is " + response.StatusCode);
 
-            IEnumerable<SubmissionsDto> submissions = response.Content.ReadAsAsync<IEnumerable<SubmissionsDto>>().Result;
+            IEnumerable<SubmissionDto> submissions = response.Content.ReadAsAsync<IEnumerable<SubmissionDto>>().Result;
             Debug.WriteLine("The number of members is: " + submissions.Count());
 
 
@@ -51,13 +51,13 @@ namespace HospitalProject.Controllers
         // GET: Submissions/Details/5
         public ActionResult Details(int id)
         {
-            string url = "submissionsdata/findsubmission/" + id;
+            string url = "submissiondata/findsubmission/" + id;
 
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             Debug.WriteLine("The response code is " + response.StatusCode);
 
-            SubmissionsDto selectedsubmission = response.Content.ReadAsAsync<SubmissionsDto>().Result;
+            SubmissionDto selectedsubmission = response.Content.ReadAsAsync<SubmissionDto>().Result;
             return View(selectedsubmission);
         }
 
@@ -67,6 +67,7 @@ namespace HospitalProject.Controllers
         }
 
         // GET: Submissions/Create
+        [HttpGet]
         public ActionResult New(int? JobId)
         {
             if (JobId == null)
@@ -75,19 +76,19 @@ namespace HospitalProject.Controllers
             }
 
             //var job = db.Jobs.Find(JobId);
-            SubmissionsDto newSubmission = new SubmissionsDto { JobId = Convert.ToInt32(JobId) };
+            SubmissionDto newSubmission = new SubmissionDto { JobId = Convert.ToInt32(JobId) };
 
             return View(newSubmission);
         }
 
         // POST: Submissions/Create
         [HttpPost]
-        public ActionResult Create(Submissions submissions)
+        public ActionResult Create(Submission submission)
         {
-            Debug.WriteLine("The user" + submissions.FirstName + " " + submissions.FirstName + "is applying...");
+            Debug.WriteLine("The user" + submission.FirstName + " " + submission.FirstName + "is applying...");
             string url = "submissionsdata/addsubmissions";
 
-            string jsonpayload = jss.Serialize(submissions);
+            string jsonpayload = jss.Serialize(submission);
 
             Debug.WriteLine(jsonpayload);
 
@@ -113,7 +114,7 @@ namespace HospitalProject.Controllers
 
         // POST: Submissions/Edit/5
         [HttpPost]
-        public ActionResult Update(int id, Submissions submissions)
+        public ActionResult Update(int id, Submission submissions)
         {
             try
             {
@@ -136,7 +137,7 @@ namespace HospitalProject.Controllers
 
             Debug.WriteLine("The response code is " + response.StatusCode);
 
-            SubmissionsDto selectedsubmission = response.Content.ReadAsAsync<SubmissionsDto>().Result;
+            SubmissionDto selectedsubmission = response.Content.ReadAsAsync<SubmissionDto>().Result;
             return View(selectedsubmission);
 
         }
@@ -145,7 +146,7 @@ namespace HospitalProject.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            string url = "submissionsdata/deletesubmissions/" + id;
+            string url = "submissiondata/deletesubmission/" + id;
 
             HttpContent content = new StringContent("");
             content.Headers.ContentType.MediaType = "application/json";

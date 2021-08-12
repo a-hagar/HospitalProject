@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HospitalProject.Models
 {
-    public class Submissions
+    public class Submission
     {
         [Key]
         public int SubmissionId { get; set; }
@@ -30,7 +30,7 @@ namespace HospitalProject.Models
         public virtual User User { get; set; }
     }
 
-    public class SubmissionsDto
+    public class SubmissionDto
     {
         public int SubmissionId { get; set; }
         public string FirstName { get; set; }
