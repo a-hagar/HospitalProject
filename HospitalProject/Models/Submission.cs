@@ -20,7 +20,7 @@ namespace HospitalProject.Models
         public bool hasFile { get; set; }
         public string FileExtension { get; set; }
         public DateTime SubmissionDate { get; set; }
-
+        //test
         [ForeignKey("Job")]
         public int JobId { get; set; }
         public virtual Job Job { get; set; }
