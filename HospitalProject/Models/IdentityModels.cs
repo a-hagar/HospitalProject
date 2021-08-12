@@ -39,7 +39,7 @@ namespace HospitalProject.Models
 
         public DbSet<Job> Jobs { get; set; }
         public DbSet<User> User { get; set; }
-        public DbSet<Submissions> Submissions { get; set; }
+        public DbSet<Submission> Submissions { get; set; }
         
         // Donor and Donations
         public DbSet<Donor> Donors { get; set; }
