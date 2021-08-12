@@ -1,0 +1,31 @@
+﻿@model IEnumerable<HospitalProject.Models.DonationDto>
+@{
+    ViewBag.Title = "Create";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New</title>
+</head>
+<body>
+    <div>
+
+        <form action="/Donor/Create" method="POST">
+            <div>
+                <label>Name:</label> <input type="text" name="DonorName" />
+            </div>
+            <div>
+                <label>Associated User</label> <input type="text" name="Username" />
+            </div>
+            
+            <div>
+                <input type="submit" value="Add Donor" />
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

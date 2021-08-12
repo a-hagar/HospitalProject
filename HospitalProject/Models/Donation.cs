@@ -19,6 +19,22 @@ namespace HospitalProject.Models
         public DateTime DonationDate { get; set; }
 
         public int Amount { get; set; }
+         
+    }
+
+    public class DonationDto
+    {
+        [Key]
+        public int DonationId { get; set; }
+
+        [ForeignKey("Donor")]
+        public int DonorId { get; set; }
+        public virtual Donor Donor { get; set; }
+
+        public DateTime DonationDate { get; set; }
+
+        public int Amount { get; set; }
+
 
     }
 }
