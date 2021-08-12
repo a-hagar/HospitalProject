@@ -147,9 +147,9 @@ namespace HospitalProject.Controllers
             Debug.WriteLine("Updating Submission...");
             if (!ModelState.IsValid)
                 if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+                {
+                    return BadRequest(ModelState);
+                }
 
             if (id != submissions.SubmissionId)
             {
