@@ -17,7 +17,7 @@ A Hospital Project for HTTP5204
 - Added for IdentityUsers, Volunteers, Department
 - Created EF Migrations for the same
 - Datacontrollers and Actioncontrollers created for Volunteer MVP
-- DataFlow
+***DataFlow***
 1. User registers an account with the portal using Identity registration.
 1. The extended IdentityUser will hold extra details of user like DOB, Blood Group, etc
 1. The logged-in user will access https://localhost:44361/Volunteers/Join for joining as a volunteer, the following view will be shown. ( A pre-requisite is that departments table should contain some department entries)
