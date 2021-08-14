@@ -1,4 +1,5 @@
 ﻿using HospitalProject.Models;
+using HospitalProject.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace HospitalProject.Controllers
         public IHttpActionResult ListVolunteers()
         {
             List<Volunteer> volunteers = db.Volunteers.ToList();
+            foreach(Volunteer vol in volunteers)
+            {
+                vol.ApplicationUser = db.Users.Find(vol.UserID);
+            }
             return Ok(volunteers);
         }
 
@@ -26,13 +31,17 @@ namespace HospitalProject.Controllers
         public IHttpActionResult FindVolunteer(int id)
         {
             Volunteer volunteer = db.Volunteers.Find(id);
-
+            
             if (volunteer == null)
             {
                 return NotFound();
             }
-
-            return Ok(volunteer);
+            List<VolunteerDept> volunteerDepts = db.VolunteerDepts.Where(a => a.VolID == volunteer.VolunteerID).ToList();
+            foreach(var vol in volunteerDepts)
+            {
+                vol.Volunteer.ApplicationUser = db.Users.Find(volunteer.UserID);
+            }
+            return Ok(volunteerDepts);
         }
 
 

@@ -314,6 +314,22 @@
     <Compile Include="Migrations\202108130308284_updatedsubmissions2.Designer.cs">
       <DependentUpon>202108130308284_updatedsubmissions2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108140724168_NavaneethConflictSolution.cs" />
+    <Compile Include="Migrations\202108140724168_NavaneethConflictSolution.Designer.cs">
+      <DependentUpon>202108140724168_NavaneethConflictSolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108140725501_ConflictSolutionNavaneeth.cs" />
+    <Compile Include="Migrations\202108140725501_ConflictSolutionNavaneeth.Designer.cs">
+      <DependentUpon>202108140725501_ConflictSolutionNavaneeth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108140751170_VolunteerStatus.cs" />
+    <Compile Include="Migrations\202108140751170_VolunteerStatus.Designer.cs">
+      <DependentUpon>202108140751170_VolunteerStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108140906356_Update-Volunteer.cs" />
+    <Compile Include="Migrations\202108140906356_Update-Volunteer.Designer.cs">
+      <DependentUpon>202108140906356_Update-Volunteer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -438,12 +454,6 @@
     <Content Include="Views\Donor\List.cshtml" />
     <Content Include="Views\Donor\New.cshtml" />
     <Content Include="Views\Volunteers\Join.cshtml" />
-    <Content Include="Views\Submission\DeleteConfirm.cshtml" />
-    <Content Include="Views\Submission\Details.cshtml" />
-    <Content Include="Views\Submission\List.cshtml" />
-    <Content Include="Views\Submission\New.cshtml" />
-    <Content Include="Views\Submission\ListSubmissionsbyJob.cshtml" />
-    <Content Include="Views\Submission\ListSubmissionByJob.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -522,12 +532,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108121935144_UserChange.resx">
       <DependentUpon>202108121935144_UserChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108122146495_ahmedfixes2.resx">
-      <DependentUpon>202108122146495_ahmedfixes2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108130308284_updatedsubmissions2.resx">
-      <DependentUpon>202108130308284_updatedsubmissions2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.ahmedfixes.resources" />
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.changeddto.resources" />

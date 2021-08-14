@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HospitalProject.Models.ViewModels.VolunteerDept>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Volunteer Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Encode("Volunteer ID")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First().VolID)
+        </dd>
+
+        <dt>
+            @Html.Encode("Volunteer Name")
+        </dt>
+
+        <dd>
+            @Html.Encode(Model.First().Volunteer.ApplicationUser.FirstName + " " + Model.First().Volunteer.ApplicationUser.LastName)
+        </dd>
+
+    </dl>
+    <hr />
+    <h4>Departments applied</h4>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var voldep in Model)
+            {
+                <tr>
+                    <td>
+                        @voldep.Department.DepartmentName
+                    </td>
+                    <td>
+                        @voldep.VolunteerStatus
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.VolDepID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

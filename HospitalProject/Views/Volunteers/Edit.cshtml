@@ -1,0 +1,48 @@
+﻿@model IEnumerable<HospitalProject.Models.ViewModels.VolunteerDept>
+
+@{
+    ViewBag.Title = "Approve Volunteer Request";
+    var statusList = ViewBag.statusList;
+}
+
+<h2>Update Volunteer Request</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Volunteer Approval Form</h4>
+        <hr />
+        <div>
+            @Model.First().Volunteer.ApplicationUser.FirstName @Model.First().Volunteer.ApplicationUser.LastName
+        </div>
+        <div>
+            @Model.First().Volunteer.ApplicationUser.Email
+        </div>
+
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @foreach (var volDep in Model)
+        {
+            <div class="form-group row">
+                <input type="hidden" name="volDepID" value="@volDep.VolDepID" />
+                @*@volDep.Department.DepartmentName*@
+                <label for="volStatus" class="control-label col-md-2">@volDep.Department.DepartmentName</label>
+                @Html.DropDownList("volStatus", (IEnumerable<SelectListItem>)statusList, "Select Status", new { @class = "form-control" })
+                @*<input type="text" name="volStatus" class="form-control col-md-10" value="@volDep.VolunteerStatus" />*@
+            </div>
+        }
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
