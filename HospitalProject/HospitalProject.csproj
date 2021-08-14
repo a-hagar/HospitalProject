@@ -284,6 +284,14 @@
     <Compile Include="Migrations\202108140725501_ConflictSolutionNavaneeth.Designer.cs">
       <DependentUpon>202108140725501_ConflictSolutionNavaneeth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108140751170_VolunteerStatus.cs" />
+    <Compile Include="Migrations\202108140751170_VolunteerStatus.Designer.cs">
+      <DependentUpon>202108140751170_VolunteerStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108140906356_Update-Volunteer.cs" />
+    <Compile Include="Migrations\202108140906356_Update-Volunteer.Designer.cs">
+      <DependentUpon>202108140906356_Update-Volunteer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -391,6 +399,10 @@
     <Content Include="Views\Donor\List.cshtml" />
     <Content Include="Views\Donor\New.cshtml" />
     <Content Include="Views\Volunteers\Join.cshtml" />
+    <Content Include="Views\Volunteers\List.cshtml" />
+    <Content Include="Views\Volunteers\Details.cshtml" />
+    <Content Include="Views\Volunteers\Edit.cshtml" />
+    <Content Include="Views\Volunteers\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -475,6 +487,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108140725501_ConflictSolutionNavaneeth.resx">
       <DependentUpon>202108140725501_ConflictSolutionNavaneeth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108140751170_VolunteerStatus.resx">
+      <DependentUpon>202108140751170_VolunteerStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108140906356_Update-Volunteer.resx">
+      <DependentUpon>202108140906356_Update-Volunteer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.ahmedfixes.resources" />
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.changeddto.resources" />

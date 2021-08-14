@@ -19,5 +19,17 @@ namespace HospitalProject.Models.ViewModels
         [ForeignKey("Department")]
         public int DeptID { get; set; }
         public virtual Department Department { get; set; }
+
+        public string VolunteerStatus { get; set; }
+    }
+
+    public enum VolunteerStatus
+    {
+        PendingApproval,
+        Approved,
+        NeedMoreInfo,
+        Rejected,
+        OnHold,
+        ContactAdmin
     }
 }

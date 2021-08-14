@@ -14,8 +14,6 @@ namespace HospitalProject.Models
         [Required(ErrorMessage = "VolunteerID is Required")]
         public int VolunteerID { get; set; }
 
-        public string VolunteerBadge { get; set; }
-
         public string UserID { get; set; }
         [ForeignKey("UserID")]
         public ApplicationUser ApplicationUser { get; set; }
