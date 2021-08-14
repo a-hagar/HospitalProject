@@ -36,6 +36,8 @@ namespace HospitalProject.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        // adding Department to DB
+        public DbSet<Department> Departments { get; set; }
 
         public DbSet<Job> Jobs { get; set; }
         public DbSet<User> User { get; set; }
@@ -45,8 +47,7 @@ namespace HospitalProject.Models
         public DbSet<Donor> Donors { get; set; }
         public DbSet<Donation> Donations { get; set; }
 
-        // adding Department to DB
-        public DbSet<Department> Departments { get; set; }
+        
         // adding Volunteers to DB
         public DbSet<Volunteer> Volunteers { get; set; }
         // adding junction table to take care of Volunteer and Dept Mapping

@@ -18,5 +18,7 @@ namespace HospitalProject.Models
         [ForeignKey("ApplicationUser")]
         public string UserID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
+
+        public string DepartmentStatus { get; set; }
     }
 }
