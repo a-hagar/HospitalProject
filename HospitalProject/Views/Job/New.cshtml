@@ -1,40 +1,43 @@
 ﻿@model IEnumerable<HospitalProject.Models.JobDto>
-    @{
-        ViewBag.Title = "New";
-    }
+@{
+    ViewBag.Title = "New";
+}
 
 
-    <a href="/Job/List">Go back</a>
+<a href="/Job/List">Go back</a>
+<a href="/Submission/List"> View All Submissions</a>
 
-    <h2>Create Job Posting</h2>
-    <form action="/Job/Create" method="POST">
-        <div>
-            <label>Job Title </label><input type="text" name="JobTitle" />
-        </div>
-        <div>
-            <label>Department</label><input type="text" name="JobDepartment" />
-        </div>
-        <div>
-            <label>Type</label><input type="text" name="JobType" />
-        </div>
-        <div style="display:none">
-            <label>Posting Date </label><input type="date" id="date" name="JobPublishDate" />
-        </div>
-        <div>
-            <label>Deadline</label><input type="date" name="JobDeadline" />
-        </div>
-        <div>
-            <label>Location </label><input type="tel" name="JobLocation" />
-        </div>
-        <div>
-            <label>Description</label><textarea name="JobDescription"></textarea>
-        </div>
-        <div>
-            <input type="submit" name="Submit Posting" />
-        </div>
-    </form>
 
-    <script>
+<h2>Create Job Posting</h2>
+<form action="/Job/Create" method="POST">
+    <div>
+        <label>Job Title </label><input type="text" name="JobTitle" />
+    </div>
+    <div>
+        <label>Department</label><input type="text" name="JobDepartment" />
+    </div>
+    <div>
+        <label>Type</label><input type="text" name="JobType" />
+    </div>
+    <div style="display:none">
+        <label>Posting Date </label><input type="date" id="date" name="JobPublishDate" />
+    </div>
+    <div>
+        <label>Deadline</label><input type="date" name="JobDeadline" />
+    </div>
+    <div>
+        <label>Location </label><input type="tel" name="JobLocation" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea name="JobDescription"></textarea>
+    </div>
+    <div>
+        <input type="submit" name="Submit Posting" />
+    </div>
+</form>
+
+<script>
     let today = new Date().toISOString().substr(0, 10);
     document.querySelector("#date").value = today;
-    </script>
+</script>

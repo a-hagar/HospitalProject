@@ -42,13 +42,13 @@ namespace HospitalProject.Controllers
             Debug.WriteLine("The response code is " + response.StatusCode);
 
             IEnumerable<SubmissionDto> submissions = response.Content.ReadAsAsync<IEnumerable<SubmissionDto>>().Result;
-            Debug.WriteLine("The number of members is: " + submissions.Count());
+            Debug.WriteLine("The total number of submissions is: " + submissions.Count());
 
 
             return View(submissions);
         }
 
-        // GET: Submissions/Details/5
+        // GET: Submission/Details/5
         public ActionResult Details(int id)
         {
             string url = "submissiondata/findsubmission/" + id;
@@ -61,6 +61,22 @@ namespace HospitalProject.Controllers
             return View(selectedsubmission);
         }
 
+        // GET: Submission/ListSubmissionByJob/1
+        public ActionResult ListSubmissionByJob(int id)
+        {
+
+            string url = "submissiondata/listsubmissionsbyjob/" + id;
+            HttpResponseMessage response = client.GetAsync(url).Result;
+
+            Debug.WriteLine("The response code is " + response.StatusCode);
+
+            IEnumerable<SubmissionDto> submissions = response.Content.ReadAsAsync<IEnumerable<SubmissionDto>>().Result;
+            Debug.WriteLine("The number of applications for this job is " + submissions.Count());
+
+
+            return View(submissions);
+        }
+
         public ActionResult Error()
         {
             return View();
@@ -68,15 +84,15 @@ namespace HospitalProject.Controllers
 
         // GET: Submissions/Create
         [HttpGet]
-        public ActionResult New(int? JobId)
+        public ActionResult New(int? JobId, string JobTitle)
         {
-            if (JobId == null)
+            if (JobId == null && JobTitle == null)
             {
                 return RedirectToAction("List", "Job");
             }
 
-            //var job = db.Jobs.Find(JobId);
-            SubmissionDto newSubmission = new SubmissionDto { JobId = Convert.ToInt32(JobId) };
+            // var job = db.Jobs.Find(JobId);
+            SubmissionDto newSubmission = new SubmissionDto { JobId = Convert.ToInt32(JobId), JobTitle = Convert.ToString(JobTitle) };
 
             return View(newSubmission);
         }
@@ -86,7 +102,7 @@ namespace HospitalProject.Controllers
         public ActionResult Create(Submission submission)
         {
             Debug.WriteLine("The user" + submission.FirstName + " " + submission.FirstName + "is applying...");
-            string url = "submissionsdata/addsubmissions";
+            string url = "submissiondata/addsubmissions";
 
             string jsonpayload = jss.Serialize(submission);
 
@@ -131,7 +147,7 @@ namespace HospitalProject.Controllers
         // GET: Submissions/Delete/5
         public ActionResult DeleteConfirm(int id)
         {
-            string url = "submissionsdata/findsubmissions/" + id;
+            string url = "submissiondata/findsubmission/" + id;
 
             HttpResponseMessage response = client.GetAsync(url).Result;
 

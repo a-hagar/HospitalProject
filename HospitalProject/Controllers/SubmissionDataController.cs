@@ -15,12 +15,20 @@ using System.Diagnostics;
 
 namespace HospitalProject.Controllers
 {
-    public class SubmissionsDataController : ApiController
+    public class SubmissionDataController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/SubmissionsData
-
+        /// <summary>
+        /// Returns all submissions from database
+        /// </summary>
+        /// <returns>
+        /// List of all submissions
+        /// </returns>
+        /// <example>
+        /// GET: api/SubmissionData/ListSubmissions
+        /// </example>
+        
         [HttpGet]
         [ResponseType(typeof(SubmissionDto))]
         public IHttpActionResult ListSubmissions()
@@ -39,13 +47,59 @@ namespace HospitalProject.Controllers
                 Email = s.Email,
                 PhoneNumber = s.PhoneNumber,
                 JobId = s.JobId,
+                JobTitle = s.Job.JobTitle
             }));
 
             return Ok(SubmissionDtos);
 
         }
 
-        // GET: api/SubmissionsData/5
+        /// <summary>
+        /// Returns all submissions that applied for a specific job posting by its id
+        /// </summary>
+        /// <param name="id">Job Id to match all the submissions that applied to the specified job posting</param>
+        /// <returns>
+        /// List of submissions for a selected job posting
+        /// </returns>
+        /// <example>
+        /// GET: api/JobData/ListSubmissionsForJob/1
+        /// </example>
+        
+        [HttpGet]
+        [ResponseType(typeof(SubmissionDto))]
+        public IHttpActionResult ListSubmissionsByJob(int id)
+        {
+            List<Submission> Submissions = db.Submissions.Where(s => s.JobId == id).ToList();
+            List<SubmissionDto> SubmissionDtos = new List<SubmissionDto>();
+
+            Submissions.ForEach(s => SubmissionDtos.Add(new SubmissionDto()
+            {
+                SubmissionId = s.SubmissionId,
+                FirstName = s.FirstName,
+                LastName = s.LastName,
+                Address = s.Address,
+                City = s.City,
+                Email = s.Email,
+                PhoneNumber = s.PhoneNumber,
+                JobId = s.JobId,
+                JobTitle = s.Job.JobTitle,
+                SubmissionDate = s.SubmissionDate
+            }));
+
+
+            return Ok(SubmissionDtos);
+        }
+
+        /// <summary>
+        /// Returns selected job submission by id
+        /// </summary>
+        /// <param name="id">The id of the submission selected to view</param>
+        /// <returns>
+        /// The info of the selected submission with the matching id
+        /// </returns>
+        /// <example>
+        /// GET api/SubmissionData/FindSubmission/1
+        /// </example>
 
         [HttpGet]
         [ResponseType(typeof(SubmissionDto))]
@@ -62,6 +116,10 @@ namespace HospitalProject.Controllers
                 Email = submissions.Email,
                 PhoneNumber = submissions.PhoneNumber,
                 JobId = submissions.JobId,
+                JobTitle = submissions.Job.JobTitle,
+                SubmissionDate = submissions.SubmissionDate,
+                hasFile = submissions.hasFile,
+                FileExtension = submissions.FileExtension
             };
 
             if (submissions == null)
@@ -72,7 +130,16 @@ namespace HospitalProject.Controllers
             return Ok(SubmissionDto);
         }
 
-
+        /// <summary>
+        /// Receives user file and uploads it to the server
+        /// </summary>
+        /// <param name="id">The id for the job associated to the resume upload</param>
+        /// <returns>
+        /// Resume is uploaded to the system and associated to the submissions
+        /// </returns>
+        /// <example>
+        /// POST: api/SubmissionData/UploadResume/1
+        /// </example>
         [HttpPost]
         public IHttpActionResult UploadResume(int id)
         {
@@ -140,7 +207,14 @@ namespace HospitalProject.Controllers
 
         }
 
-        // PUT: api/SubmissionsData/5
+        /// <summary>
+        /// Updates the selected job submission
+        /// </summary>
+        /// <param name="id">The id of the submission selected</param>
+        /// <param name="submissions">The data of the </param>
+        /// <example>
+        /// PUT: api/SubmissionsData/5
+        /// </example>
         [ResponseType(typeof(void))]
         public IHttpActionResult UpdateSubmissions(int id, Submission submissions)
         {
@@ -178,7 +252,11 @@ namespace HospitalProject.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/SubmissionsData
+        /// <summary>
+        /// Adds new submission to the database
+        /// </summary>
+        /// <param name="submissions"></param>
+        /// <returns></returns>
         [HttpPost]
         [ResponseType(typeof(Submission))]
         public IHttpActionResult AddSubmissions(Submission submissions)
@@ -194,7 +272,13 @@ namespace HospitalProject.Controllers
             return CreatedAtRoute("DefaultApi", new { id = submissions.SubmissionId }, submissions);
         }
 
-        // DELETE: api/SubmissionsData/5
+        /// <summary>
+        /// Deletes the selected submission from the database
+        /// </summary>
+        /// <param name="id">The id of the selected submission</param>
+        /// <returns>
+        /// The selected database is removed from the database
+        /// </returns>
         [HttpPost]
         [ResponseType(typeof(Submission))]
         public IHttpActionResult DeleteSubmissions(int id)

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<HospitalProject.Models.SubmissionDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Applicant Submissions</h2>
+<a href="/Job/List">Return to Careers </a>
+
+@foreach (var Submission in Model)
+{ 
+    <h2><a href="/Submission/Details/@Submission.SubmissionId">@Submission.FirstName @Submission.LastName, @Submission.SubmissionDate.ToString("yyyy-MM-dd")</a></h2>
+}

@@ -30,7 +30,8 @@ namespace HospitalProject.Controllers
                 JobId = j.JobId,
                 JobTitle = j.JobTitle,
                 JobDescription = j.JobDescription,
-                DepartmentID = j.DepartmentID,
+                DepartmentID = j.Department.DepartmentID,
+                DepartmentName = j.Department.DepartmentName,
                 JobPublishDate = j.JobPublishDate,
                 JobDeadline = j.JobDeadline,
                 JobType = j.JobType,
@@ -40,6 +41,7 @@ namespace HospitalProject.Controllers
             return Ok(JobDtos);
 
         }
+
 
         // GET: api/JobData/FindJob/5
         [ResponseType(typeof(JobDto))]
@@ -52,7 +54,8 @@ namespace HospitalProject.Controllers
                 JobId = job.JobId,
                 JobTitle = job.JobTitle,
                 JobDescription = job.JobDescription,
-                DepartmentID = job.DepartmentID,
+                DepartmentID = job.Department.DepartmentID,
+                DepartmentName = job.Department.DepartmentName,
                 JobPublishDate = job.JobPublishDate,
                 JobDeadline = job.JobDeadline,
                 JobType = job.JobType,

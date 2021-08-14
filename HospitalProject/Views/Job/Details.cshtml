@@ -2,11 +2,14 @@
 @{
     ViewBag.Title = "List";
 }
-<a href="/Job/List">Return to Careers</a>
+<a href="/Job/List">Return to Careers </a>
+<a href="/Submission/ListSubmissionByJob/@Model.JobId"> View Submissions for this Job</a><br />
+<a href="/Job/DeleteConfirm/@Model.JobId">Delete Posting</a><br />
+
 
 <h2>@Model.JobTitle, @Model.JobType</h2>
 <p>Posted on @Model.JobPublishDate</p>
-<p>Department: @Model.DepartmentID</p>
+<p>Department: @Model.DepartmentName</p>
 <p>Location: @Model.JobLocation</p>
 
 
@@ -15,7 +18,8 @@
 <br />
 
 <p>Apply before the deadline at @Model.JobDeadline</p>
-<form method="post" action="/Submissions/New">
+<form method="GET" action="/Submission/New">
     <input type="hidden" name="JobId" value=@Model.JobId />
+    <input type="hidden" name="JobTitle" value=@Model.JobTitle />
     <input type="submit" value="Apply" />
 </form>

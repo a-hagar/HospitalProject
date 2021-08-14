@@ -25,9 +25,6 @@ namespace HospitalProject.Models
         public int JobId { get; set; }
         public virtual Job Job { get; set; }
 
-        [ForeignKey("User")]
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
     }
 
     public class SubmissionDto
@@ -43,5 +40,6 @@ namespace HospitalProject.Models
         public string FileExtension { get; set; }
         public DateTime SubmissionDate { get; set; }
         public int JobId { get; set; }
+        public string JobTitle { get; set; }
     }
 }

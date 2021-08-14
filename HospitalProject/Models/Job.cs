@@ -30,6 +30,7 @@ namespace HospitalProject.Models
         public int JobId { get; set; }
         public string JobTitle { get; set; }
         public int DepartmentID { get; set; }
+        public string DepartmentName { get; set; }
         public string JobDescription { get; set; }
         public DateTime JobPublishDate { get; set; }
         public DateTime JobDeadline { get; set; }
