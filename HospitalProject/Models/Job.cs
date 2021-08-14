@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,8 +17,10 @@ namespace HospitalProject.Models
         [ForeignKey("Department")]
         public int DepartmentID { get; set; }
         public virtual Department Department { get; set; }
-
+        
+        [AllowHtml]
         public string JobDescription { get; set; }
+
         public DateTime JobPublishDate { get; set; }
         public DateTime JobDeadline { get; set; }
         public string JobType { get; set; }
@@ -31,7 +34,10 @@ namespace HospitalProject.Models
         public string JobTitle { get; set; }
         public int DepartmentID { get; set; }
         public string DepartmentName { get; set; }
+
+        [AllowHtml]
         public string JobDescription { get; set; }
+
         public DateTime JobPublishDate { get; set; }
         public DateTime JobDeadline { get; set; }
         public string JobType { get; set; }

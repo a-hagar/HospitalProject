@@ -642,5 +642,57 @@
             The selected database is removed from the database
             </returns>
         </member>
+        <member name="M:HospitalProject.Controllers.VolunteersController.List">
+            <summary>
+            List all the volunteers
+            </summary>
+            <returns>View with all volunteers</returns>
+        </member>
+        <member name="M:HospitalProject.Controllers.VolunteersController.Details(System.Int32)">
+            <summary>
+            Display the details of a volunteer
+            </summary>
+            <param name="id">Volunteer ID</param>
+            <returns>View with volunteer detail</returns>
+        </member>
+        <member name="M:HospitalProject.Controllers.VolunteersController.Join">
+            <summary>
+            Add a new volunteer
+            Shows a page with the information of the logged in user in readonly format, and a checkbox containing all possible departments
+            the person can volunteer for
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HospitalProject.Controllers.VolunteersController.Join(System.String[])">
+            <summary>
+            Create a volunteer - user - department mapping
+            </summary>
+            <param name="dept">list of departmentIDs selected by the user</param>
+            <returns></returns>
+            Note : Code needs to be moved to datacontroller
+        </member>
+        <member name="M:HospitalProject.Controllers.VolunteersController.Edit(System.Int32)">
+            <summary>
+            For the admin to change the status of the Volunteer request
+            </summary>
+            <param name="id">ID of the volunteer</param>
+            <returns>A view with the volunteer details and the departments to which the volunteer requested with current status</returns>
+        </member>
+        <member name="M:HospitalProject.Controllers.VolunteersController.Edit(System.Collections.Generic.ICollection{System.String},System.Collections.Generic.ICollection{System.String})">
+            <summary>
+            Volunteer Satus Update code, admin can select the Status of the Volunteer from the page and click on save to update it
+            </summary>
+            <param name="volDepID">VolDepID</param>
+            <param name="volStatus">Updated Volunteer Status</param>
+            <returns></returns>
+        </member>
+        <member name="M:HospitalProject.Controllers.VolunteersController.Delete(System.Int32,System.Web.Mvc.FormCollection)">
+            <summary>
+            Change this logic to datacontroller
+            </summary>
+            <param name="id"></param>
+            <param name="collection"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

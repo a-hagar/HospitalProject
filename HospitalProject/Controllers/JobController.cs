@@ -158,7 +158,7 @@ namespace HospitalProject.Controllers
         [HttpPost]
         public ActionResult Delete(int id)
         {
-            string url = "jobsdata/deletejob/" + id;
+            string url = "jobdata/deletejob/" + id;
 
             HttpContent content = new StringContent("");
             content.Headers.ContentType.MediaType = "application/json";
