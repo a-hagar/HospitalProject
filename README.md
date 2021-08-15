@@ -32,3 +32,8 @@ A Hospital Project for HTTP5204
 1. Due to lack of time, I couldn't move all the data processing code to data controller. so some of my action controller is fetching and processing data from DB. I'm migrating it one at a time, and I'll ensure all the data access is done by the datacontrollers on the final submission.
 
 
+**ERIC WICKHAM**
+- created models for Donor/Donation Feature, linked with ASPNET User Table
+- basic crud functionality implemented for feature. 
+- Donation table functions to record behaviour of every site user, logs amount, time of donation and the identity of the user
+- due to build issues couldn't test functionality of features
