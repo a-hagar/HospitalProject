@@ -56,6 +56,14 @@ namespace HospitalProject.Models
         // adding junction table to take care of Volunteer and Dept Mapping
         public DbSet<VolunteerDept> VolunteerDepts { get; set; }
 
+
+
+        //Create a table for patient details
+        public DbSet<Patient> Patients { get; set; }
+
+        //Create a table for patientlog details
+        public DbSet<PatientLog> PatientLogsDto { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

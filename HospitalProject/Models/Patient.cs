@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -8,12 +9,18 @@ namespace HospitalProject.Models
 {
     public class Patient
     {
-        [ForeignKey("PatientLog")]
-
+        [Key]
         public int PatientID { get; set; }
 
-        [ForeignKey("User")]
+        //Different period of time associated with same users
+        //[ForeignKey("Patientlog")]
+        //public int PatientLogID { get; set; }
+        //
+        //Diiferent users can stay in same period of time
 
-        public int userid { get; set; }
+
+        [ForeignKey("ApplicationUser")]
+        public string UserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

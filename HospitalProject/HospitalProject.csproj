@@ -223,6 +223,7 @@
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\JobDataController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PatientLogsDataController.cs" />
     <Compile Include="Controllers\SubmissionController.cs" />
     <Compile Include="Controllers\SubmissionDataController.cs" />
     <Compile Include="Controllers\VolunteersController.cs" />
@@ -338,13 +339,17 @@
     <Compile Include="Migrations\202108142037172_newsubmission1.Designer.cs">
       <DependentUpon>202108142037172_newsubmission1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108240711042_DoctorDetails-Haroon.cs" />
-    <Compile Include="Migrations\202108240711042_DoctorDetails-Haroon.Designer.cs">
-      <DependentUpon>202108240711042_DoctorDetails-Haroon.cs</DependentUpon>
+    <Compile Include="Migrations\202108191927354_patientsmital.cs" />
+    <Compile Include="Migrations\202108191927354_patientsmital.Designer.cs">
+      <DependentUpon>202108191927354_patientsmital.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108240904102_departmentDto-Haroon.cs" />
-    <Compile Include="Migrations\202108240904102_departmentDto-Haroon.Designer.cs">
-      <DependentUpon>202108240904102_departmentDto-Haroon.cs</DependentUpon>
+    <Compile Include="Migrations\202108231225030_patientlogsmital.cs" />
+    <Compile Include="Migrations\202108231225030_patientlogsmital.Designer.cs">
+      <DependentUpon>202108231225030_patientlogsmital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108231227173_patientlogcorrectionsmital.cs" />
+    <Compile Include="Migrations\202108231227173_patientlogcorrectionsmital.Designer.cs">
+      <DependentUpon>202108231227173_patientlogcorrectionsmital.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -585,11 +590,14 @@
     <EmbeddedResource Include="Migrations\202108142037172_newsubmission1.resx">
       <DependentUpon>202108142037172_newsubmission1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108240711042_DoctorDetails-Haroon.resx">
-      <DependentUpon>202108240711042_DoctorDetails-Haroon.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108191927354_patientsmital.resx">
+      <DependentUpon>202108191927354_patientsmital.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108240904102_departmentDto-Haroon.resx">
-      <DependentUpon>202108240904102_departmentDto-Haroon.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108231225030_patientlogsmital.resx">
+      <DependentUpon>202108231225030_patientlogsmital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108231227173_patientlogcorrectionsmital.resx">
+      <DependentUpon>202108231227173_patientlogcorrectionsmital.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.ahmedfixes.resources" />
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.changeddto.resources" />

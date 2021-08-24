@@ -13,13 +13,9 @@ namespace HospitalProject.Models
         public int FeedbackID { get; set; }
         public string FeedbackDetails { get; set; }
 
-
-
-        [ForeignKey ("Department")]
-        public string Deptname { get; set; }
-
         [ForeignKey("User")]
         public int userID { get; set; }
+
 
 
 

@@ -14,5 +14,13 @@ namespace HospitalProject.Models
 		public DateTime PatientDateIn { get; set; }
 		public DateTime PatientDateOut { get; set; }
 
+
+		public class PatientLogsDto
+		{
+			public int PatientID { get; set; }
+			public DateTime PatientDateIn { get; set; }
+			public DateTime PatientDateOut { get; set; }
+
+		}
 	}
 }
