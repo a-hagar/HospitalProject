@@ -481,70 +481,36 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
-        <member name="M:HospitalProject.Controllers.DoctorDetailsController.GetApplicationCookie">
-            <summary>
-            Grabs the authentication cookie sent to this controller.
-            For proper WebAPI authentication, you can send a post request with login credentials to the WebAPI and log the access token from the response. The controller already knows this token, so we're just passing it up the chain.
-            
-            Here is a descriptive article which walks through the process of setting up authorization/authentication directly.
-            https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/individual-accounts-in-web-api
-            </summary>
-        </member>
         <member name="M:HospitalProject.Controllers.DoctorDetailsDataController.ListDoctorDetails">
             <summary>
-            List of all the doctors along with their respective departments.
+            List 
             </summary>
-            <returns>List of Doctors.</returns>
+            <returns>The list of doctors</returns>
         </member>
         <member name="M:HospitalProject.Controllers.DoctorDetailsDataController.FindDoctorDetail(System.Int32)">
             <summary>
-            Finds a Doctor with specific Id.
+            Finds a particular doctor by referencing its ID.
             </summary>
-            <param name="id">Doctor Id</param>
-            <returns>A specific doctor details</returns>
+            <param name="id">DoctorId</param>
+            <returns>Details for the doctor with the referenced ID</returns>
         </member>
         <member name="M:HospitalProject.Controllers.DoctorDetailsDataController.ListDoctorDetailForDepartment(System.Int32)">
             <summary>
-            Gathers informatin about all the doctors in a specific department
+            Doctors in a particular department
             </summary>
-            <param name="id">Department Id</param>
-            <returns>List of Doctor Details</returns>
-            GET: api/DoctorDetailsData/ListDoctorDetailForDepartment/1
+            <param name="id">DepartmentID</param>
+            <returns>List of Doctor's Details</returns>
+            GET: api/doctordetailsdata/listdoctordetailfordepartment/5
         </member>
         <member name="M:HospitalProject.Controllers.DoctorDetailsDataController.UpdateDoctorDetail(System.Int32,HospitalProject.Models.DoctorDetail)">
             <summary>
-            Updates the doctor information for specific Id
+            Updates the doctor's details by referencing the Id
             </summary>
-            <param name="id">Doctor Id</param>
+            <param name="id">DoctorId</param>
             <param name="doctorDetails"></param>
-            <returns>  
-                 HEADER: 200 (OK)
-                or
-                HEADER: 404 (NOT FOUND)
-            </returns>
         </member>
-        <member name="M:HospitalProject.Controllers.DoctorDetailsDataController.AddDoctor(HospitalProject.Models.DoctorDetail)">
-            <summary>
-            Adds a new Doctor to the database.
-            </summary>
-            <param name="doctorDetails">Doctor detail Model</param>
-            <returns>
-             HEADER: 200 (OK)
-                or
-                HEADER: 404 (NOT FOUND)
-            </returns>
-        </member>
-        <member name="M:HospitalProject.Controllers.DoctorDetailsDataController.DeleteDoctorDetail(System.Int32)">
-            <summary>
-            Delete a spefic doctor
-            </summary>
-            <param name="id">Doctor Id</param>
-            <returns>
-             HEADER: 200 (OK)
-                or
-                HEADER: 404 (NOT FOUND)
-            </returns>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:HospitalProject.Controllers.DoctorDetailsDataController.AddDoctor(HospitalProject.Models.DoctorDetail)" -->
+        <!-- Badly formed XML comment ignored for member "M:HospitalProject.Controllers.DoctorDetailsDataController.DeleteDoctorDetail(System.Int32)" -->
         <member name="M:HospitalProject.Controllers.DonationDataController.ListDonations">
             <summary>
             Returns all Donations in the system.
@@ -758,26 +724,17 @@
             <param name="collection"></param>
             <returns></returns>
         </member>
-        <member name="M:Hospital_Project.Controllers.DepartmentController.GetApplicationCookie">
-            <summary>
-            Grabs the authentication cookie sent to this controller.
-            For proper WebAPI authentication, you can send a post request with login credentials to the WebAPI and log the access token from the response. The controller already knows this token, so we're just passing it up the chain.
-            
-            Here is a descriptive article which walks through the process of setting up authorization/authentication directly.
-            https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/individual-accounts-in-web-api
-            </summary>
-        </member>
         <member name="M:Hospital_Project.Controllers.DepartmentDataController.ListDepartments">
             <summary>
-            To list all the departments.
+            List of departments at the hospital
             </summary>
-            <returns>A list of all departments.</returns>
+            <returns>A list of all departments at the hospital</returns>
         </member>
         <member name="M:Hospital_Project.Controllers.DepartmentDataController.FindDepartment(System.Int32)">
             <summary>
-            Finds a particular department detail with the help of id.
+            Finds a particular department by referencing it's ID
             </summary>
-            <param name="id">Department Id</param>
+            <param name="id">DepartmentID</param>
             <returns>A sepcific Department.</returns>
         </member>
     </members>
