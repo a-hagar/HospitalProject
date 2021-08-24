@@ -21,4 +21,11 @@ namespace HospitalProject.Models
 
         public string DepartmentStatus { get; set; }
     }
+    public class DepartmentDto
+    {
+        public int DepartmentId { get; set; }
+        public string DepartmentName { get; set; }
+        public string UserID { get; set; }
+        public string DepartmentStatus { get; set; }
+    }
 }

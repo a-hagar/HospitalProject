@@ -39,6 +39,9 @@ namespace HospitalProject.Models
         // adding Department to DB
         public DbSet<Department> Departments { get; set; }
 
+        //adding DoctorDetails to Db
+        public DbSet<DoctorDetail> DoctorDetails { get; set; }
+
         public DbSet<Job> Jobs { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Submission> Submissions { get; set; }

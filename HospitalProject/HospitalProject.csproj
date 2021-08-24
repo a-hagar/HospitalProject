@@ -211,6 +211,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DepartmentDataController.cs" />
+    <Compile Include="Controllers\DoctorDetailsController.cs" />
+    <Compile Include="Controllers\DoctorDetailsDataController.cs" />
     <Compile Include="Controllers\DonationController.cs" />
     <Compile Include="Controllers\DonationDataController.cs" />
     <Compile Include="Controllers\DonorController.cs" />
@@ -334,10 +338,19 @@
     <Compile Include="Migrations\202108142037172_newsubmission1.Designer.cs">
       <DependentUpon>202108142037172_newsubmission1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108240711042_DoctorDetails-Haroon.cs" />
+    <Compile Include="Migrations\202108240711042_DoctorDetails-Haroon.Designer.cs">
+      <DependentUpon>202108240711042_DoctorDetails-Haroon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108240904102_departmentDto-Haroon.cs" />
+    <Compile Include="Migrations\202108240904102_departmentDto-Haroon.Designer.cs">
+      <DependentUpon>202108240904102_departmentDto-Haroon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\DoctorDetail.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\Donor.cs" />
     <Compile Include="Models\Feedback.cs" />
@@ -350,6 +363,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\DetailsDonations.cs" />
     <Compile Include="Models\ViewModels\DetailsDonors.cs" />
+    <Compile Include="Models\ViewModels\DoctorDetailsDepartment.cs" />
+    <Compile Include="Models\ViewModels\UpdateDoctorDetails.cs" />
     <Compile Include="Models\ViewModels\UpdateDonation.cs" />
     <Compile Include="Models\ViewModels\UpdateDonor.cs" />
     <Compile Include="Models\ViewModels\VolunteerDept.cs" />
@@ -463,10 +478,17 @@
     <Content Include="Views\Submission\List.cshtml" />
     <Content Include="Views\Submission\ListSubmissionByJob.cshtml" />
     <Content Include="Views\Submission\New.cshtml" />
+    <Content Include="Views\DoctorDetails\List.cshtml" />
+    <Content Include="Views\DoctorDetails\Details.cshtml" />
+    <Content Include="Views\DoctorDetails\New.cshtml" />
+    <Content Include="Views\DoctorDetails\Error.cshtml" />
+    <Content Include="Views\DoctorDetails\Update.cshtml" />
+    <Content Include="Views\DoctorDetails\DeleteConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Department\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -562,6 +584,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108142037172_newsubmission1.resx">
       <DependentUpon>202108142037172_newsubmission1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108240711042_DoctorDetails-Haroon.resx">
+      <DependentUpon>202108240711042_DoctorDetails-Haroon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108240904102_departmentDto-Haroon.resx">
+      <DependentUpon>202108240904102_departmentDto-Haroon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.ahmedfixes.resources" />
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.changeddto.resources" />

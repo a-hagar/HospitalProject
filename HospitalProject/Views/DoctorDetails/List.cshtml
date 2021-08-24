@@ -1,0 +1,21 @@
+﻿@model IEnumerable<HospitalProject.Models.DoctorDetailDto>
+@{
+    ViewBag.Title = "List";
+}
+<div class="heading-container">
+    <h2>Doctors List</h2>
+    @{
+        if (User.IsInRole("Admin"))
+        {
+            <h4><a href="/doctordetails/new" class="btn btn-success">Add new Doctor</a></h4>
+        }
+    }
+
+</div>
+<ul>
+    @foreach (var doctordetail in Model)
+    {
+        <li class="list-style"><h3><a href="/doctorDetail/Details/@doctordetail.DoctorId">@doctordetail.DoctorFname @doctordetail.DoctorLname</a></h3></li>
+    }
+</ul>
+
