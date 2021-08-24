@@ -40,3 +40,8 @@ A Hospital Project for HTTP5204
 
 
 **Haroon Shaffiulla**
+- Created models and viewmodels for Doctor's Details and linked with Department
+- Created & updated the database with Code-First Migrations
+- CRUD functionality for DoctorDetails
+- Controllers and datacontrollers for both department and Doctorsdetails
+- Added role based authentication
