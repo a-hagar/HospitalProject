@@ -37,3 +37,6 @@ A Hospital Project for HTTP5204
 - basic crud functionality implemented for feature. 
 - Donation table functions to record behaviour of every site user, logs amount, time of donation and the identity of the user
 - due to build issues couldn't test functionality of features
+
+
+**Haroon Shaffiulla**
