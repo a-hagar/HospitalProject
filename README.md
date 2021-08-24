@@ -43,5 +43,7 @@ A Hospital Project for HTTP5204
 - Created models and viewmodels for Doctor's Details and linked with Department
 - Created & updated the database with Code-First Migrations
 - CRUD functionality for DoctorDetails
+- Made use of cookies
 - Controllers and datacontrollers for both department and Doctorsdetails
 - Added role based authentication
+- Future Iteration - UI/UX of the website
