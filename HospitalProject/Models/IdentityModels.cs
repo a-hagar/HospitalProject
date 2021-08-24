@@ -54,10 +54,12 @@ namespace HospitalProject.Models
         public DbSet<VolunteerDept> VolunteerDepts { get; set; }
 
 
-        //public DbSet<PatientLog> PatientLogs { get; set; }
 
+        //Create a table for patient details
         public DbSet<Patient> Patients { get; set; }
 
+        //Create a table for patientlog details
+        public DbSet<PatientLog> PatientLogsDto { get; set; }
 
         public static ApplicationDbContext Create()
         {

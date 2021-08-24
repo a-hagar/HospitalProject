@@ -219,6 +219,7 @@
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Controllers\JobDataController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PatientLogsDataController.cs" />
     <Compile Include="Controllers\SubmissionController.cs" />
     <Compile Include="Controllers\SubmissionDataController.cs" />
     <Compile Include="Controllers\VolunteersController.cs" />
@@ -337,6 +338,14 @@
     <Compile Include="Migrations\202108191927354_patientsmital.cs" />
     <Compile Include="Migrations\202108191927354_patientsmital.Designer.cs">
       <DependentUpon>202108191927354_patientsmital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108231225030_patientlogsmital.cs" />
+    <Compile Include="Migrations\202108231225030_patientlogsmital.Designer.cs">
+      <DependentUpon>202108231225030_patientlogsmital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108231227173_patientlogcorrectionsmital.cs" />
+    <Compile Include="Migrations\202108231227173_patientlogcorrectionsmital.Designer.cs">
+      <DependentUpon>202108231227173_patientlogcorrectionsmital.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -569,6 +578,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108191927354_patientsmital.resx">
       <DependentUpon>202108191927354_patientsmital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108231225030_patientlogsmital.resx">
+      <DependentUpon>202108231225030_patientlogsmital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108231227173_patientlogcorrectionsmital.resx">
+      <DependentUpon>202108231227173_patientlogcorrectionsmital.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.ahmedfixes.resources" />
     <EmbeddedResource Include="obj\Debug\HospitalProject.Migrations.changeddto.resources" />
